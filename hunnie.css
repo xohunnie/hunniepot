@@ -13,7 +13,7 @@ nav {
 	display: flex;
     justify-content: space-around;
     min-height: 10vh;
-    background-color: rgb(245, 234, 223);
+    background: linear-gradient(rgba(245, 234, 223,.8), rgba(245, 234, 223,0));
     font-family: 'Poppins', sans-serif;
 }
 .nav-links {
@@ -230,15 +230,19 @@ nav {
 }
 @media screen and (max-width:768px) {
     body {
-        /* overflow-x: hidden; */
-    }
+        overflow-x: hidden;
+	}
+	nav {
+		background-color: rgb(245, 234, 223);
+
+	}
     .nav-links {
         position: absolute;
         right: 0px;
         height: 90vh;
         top: 10vh;
-        background-color: rgb(245, 234, 223);
-        display: flex;
+		display: flex;
+		background-color: rgb(245, 234, 223);
         flex-direction: column;
         align-items: center;
         width: 50%;
