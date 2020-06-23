@@ -1,0 +1,264 @@
+
+/* nav bar container */
+.nav-bar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	color: #f5eadf;
+	background: linear-gradient(rgba(245, 234, 223,.8), rgba(245, 234, 223,0));
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+.nav-links {
+	flex-grow: 1;
+}
+.nav-bar ul li, a {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	color: #7a7a7a;
+	text-decoration: none;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+.nav-bar ul li {
+	list-style: none;
+	display: inline-block;
+	padding: 0px 20px;
+	text-align: center;
+}
+.nav-bar ul li a {
+	transition: all 0.3s ease 0s;
+}
+.nav-bar ul li a:hover {
+	color: #bc8f8f;
+	text-decoration: none;
+}
+
+.nav-about ul li {
+	display: none;
+}
+
+.nav-about ul {
+	position: absolute;
+	z-index: 100;
+}
+
+.nav-about:hover ul li {
+	display:block; 
+	border: solid 1px #f5eadf;
+	background-color: #f5eadf;
+	flex-grow: 1;
+}
+
+/* hunniepot top left corner logo */
+#logo {
+	max-width: 300px;
+	padding-left: 20px;
+}
+
+.homepage-sections {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.homepage-sections h1 {
+	font-size: 64px;
+	color: #7a7a7a;
+}
+
+.homepage-sections div {
+	width: 70%;
+	position: relative;
+}
+
+.homepage-sections div p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 25px;
+	color: #7a7a7a;
+	text-align: justify;
+}
+
+#about {
+	background: url("about-background.jpg") no-repeat center center/cover;
+	
+}
+
+#timeline h1 {
+	font-size: 4rem;
+	color: #7a7a7a;
+	text-align: center;
+}
+
+.timeline {
+	background: linear-gradient(rgba(245, 234, 223,0), rgba(245, 234, 223,.3));
+}
+
+.timeline ul li {
+	list-style-type: none;
+	position: relative;
+	width: 6px;
+	margin: 0px auto;
+	padding-top: 50px;
+	background: #f5eadf;
+}
+.timeline ul li::after { /*the circle bullets on the vertical line*/
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: inherit; /* learn what this means */
+}
+.timeline ul li div {
+	position: relative;
+	bottom: 0;
+	width: 400px;
+	padding: 15px;
+	background: #f5e9e1;
+	color: #7a7a7a;
+}
+
+.timeline ul li div::before { /*the triangles that point to the verticle line*/
+	content: ''; /* is this automatically a bullet point b/c it's a li item? */
+	position: absolute;
+	bottom: 7px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div { 
+	left: 55px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+	left: -15px;
+	border-width: 8px 16px 8px 0; /*this is how to make a triangle */
+	border-color: transparent #f5e9e1 transparent transparent; /*in addition with this*/ 
+}
+
+.timeline ul li:nth-child(even) div {
+	left: -479px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+	right: -15px;
+	border-width: 8px 0px 8px 16px; /*this is how to make a triangle */
+	border-color: transparent transparent transparent #f5e9e1; /*in addition with this*/ 
+}
+
+/*EFFECTS*/
+
+.timeline ul li::after {
+	transition: #f5e9e1 .5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+	background: #f5e9e1;
+}
+
+.timeline ul li div {
+	visibility: hidden;
+	opacity: 0;
+	transition: all .5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+	transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+	transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+	transform: none;
+	visibility: visible;
+	opacity: 1;
+}
+
+/*MEDIA*/
+
+@media screen and (max-width: 900px) { /*this was copied and pasted so must go over the understand*/
+  .timeline ul li div {
+    width: 250px;
+  }
+  .timeline ul li:nth-child(even) div {
+    left: -289px; /*250+45-6*/
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+   
+  .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+   
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+   
+  .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #f5e9e1 transparent transparent;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+	#logo {
+		max-width: 200px;
+	}
+	.nav-bar ul li a {
+		font-size: 14px;
+	}
+	.homepage-sections h1 {
+		font-size: 64px;
+	}  
+	.homepage-sections div p {
+		font-size: 20px;
+	}  
+}
+
+@media screen and (max-width: 900px) {
+	.homepage-sections h1 {
+		font-size: 50px;
+	}
+	.homepage-sections div p {
+		font-size: 16px; 
+	}
+}
+
+@media screen and (max-width: 1030px) {
+	.nav-bar ul li {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+/* @media screen and (max-width: 720px) {
+	hamburger menu 
+} */
+
+@media screen and (max-width: 600px) {
+	.homepage-sections h1 {
+		font-size: 40px;
+	}
+	.homepage-sections div p {
+		font-size: 15px;
+	}
+}
