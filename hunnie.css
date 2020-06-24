@@ -212,6 +212,9 @@ nav {
 	.homepage-sections div p {
 		font-size: 20px;
 	}  
+	.nav-links {
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -221,15 +224,7 @@ nav {
 	.homepage-sections div p {
 		font-size: 16px; 
 	}
-}
-
-@media screen and (max-width:1024px) {
-    .nav-links {
-        width: 60%;
-    }
-}
-@media screen and (max-width:768px) {
-    body {
+	body {
         overflow-x: hidden;
 	}
 	nav {
@@ -256,6 +251,40 @@ nav {
         display: block;
     }
 }
+
+/* @media screen and (max-width:1024px) {
+    .nav-links {
+        width: 60%;
+    }
+} */
+/* @media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+	}
+	nav {
+		background-color: rgb(245, 234, 223);
+
+	}
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 90vh;
+        top: 10vh;
+		display: flex;
+		background-color: rgb(245, 234, 223);
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+} */
 
 .nav-active {
     transform: translateX(0%);
