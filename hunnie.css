@@ -87,6 +87,22 @@ nav {
 	background: linear-gradient(rgba(245, 234, 223,0), rgba(245, 234, 223,.3));
 }
 
+.timeline-name {
+	font-size: 20px;
+	font-family: 'Playfair Display', serif;
+}
+
+.timeline-date {
+	font-size: 12px;
+	text-align: right;
+	font-family: 'Poppins', sans-serif;
+}
+
+.timeline-summary {
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+}
+
 .timeline ul li {
 	list-style-type: none;
 	position: relative;
